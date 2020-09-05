@@ -1,4 +1,4 @@
-<%@ page import="webappdemo.model.database.HibernateUtil" %><%--
+<%@ page import="webappdemo.database.HibernateUtil" %><%--
   Created by IntelliJ IDEA.
   User: korneliajagodzinska
   Date: 05/09/2020
@@ -19,6 +19,7 @@
     </style>
 </head>
 <body>
+<jsp:include page="navigator.jsp"/>
 
 <form action="${pageContext.request.contextPath}/" method="get">
     <label for="colInput">Ilość kolumn:</label> <input id="colInput" type="number" min="1" step="1" name="colNumber">

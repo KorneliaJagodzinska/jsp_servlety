@@ -11,6 +11,7 @@
     <title>Student Form</title>
 </head>
 <body>
+<jsp:include page="navigator.jsp"/>
 <form action="${pageContext.request.contextPath}/" method="get">
     <%--first name input type text--%>
     <label for="inputName">First name:</label> <input id="inputName" type="text" name="firstNameValue"><br/>

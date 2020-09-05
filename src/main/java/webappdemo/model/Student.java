@@ -1,4 +1,4 @@
-package webappdemo.model.model;
+package webappdemo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
