@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <title>Index Page</title>
@@ -18,8 +20,9 @@
 </head>
 <body>
 
-<form action="" method="get">
+<form action="${pageContext.request.contextPath}/" method="get">
     <label for="colInput">Ilość kolumn:</label> <input id="colInput" type="number" min="1" step="1" name="colNumber">
+    <label for="rowInput">Ilość kolumn:</label> <input id="rowInput" type="number" min="1" step="1" name="rowNumber">
     <input type="submit">
 </form>
 <hr> <%--linia horyzontalna--%>
@@ -31,12 +34,19 @@
     }else{
         colNumber = Integer.parseInt(colNumberString);
     }
+    String rowNumberString = request.getParameter("rowNumber");
+    int rowNumber;
+    if(rowNumberString == null){
+        rowNumber = 10; // domyślna wartość
+    }else{
+        rowNumber = Integer.parseInt(colNumberString);
+    }
     out.print("<table>");
     // stwórz tabliczkę mnożenia (tabela)
     // rozmiar tabliczki mnożenia to 10 x 10
     // każda komórka w tabeli powinna zawierać jeden wynik mnożenia
     // tabela powinna być stylizowana i mieć obramowanie
-    for (int i = 1; i <= 10; i++) {
+    for (int i = 1; i <= rowNumber; i++) {
         out.print("<tr>"); // table row
         for (int col = 1; col <= colNumber; col++) {
             out.print("<td>");
@@ -47,6 +57,7 @@
     }
     out.print("</table>");
 %>
+
 
 <%
     out.print("<table>");
