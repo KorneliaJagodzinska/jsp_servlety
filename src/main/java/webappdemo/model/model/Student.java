@@ -1,8 +1,9 @@
-package webappdemo.model;
+package webappdemo.model.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Formula;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +23,8 @@ public class Student {
     private String firstName;
     private String LastName;
     private LocalDate birthDate;
+    @Formula("(year(now())-year(birthDate))")
+    private int age;
     private boolean special;
     private double ects;
 
