@@ -1,4 +1,4 @@
-<%--
+<%@ page import="webappdemo.model.database.HibernateUtil" %><%--
   Created by IntelliJ IDEA.
   User: korneliajagodzinska
   Date: 05/09/2020
@@ -27,6 +27,7 @@
 </form>
 <hr> <%--linia horyzontalna--%>
 <%
+    HibernateUtil.getSessionFactory(); //spowoduje załadowanie bazy
     String colNumberString = request.getParameter("colNumber");
     int colNumber;
     if(colNumberString == null){
