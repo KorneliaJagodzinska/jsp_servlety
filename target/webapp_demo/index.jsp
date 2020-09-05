@@ -1,4 +1,4 @@
-<%@ page import="webappdemo.model.database.HibernateUtil" %><%--
+<%@ page import="webappdemo.database.HibernateUtil" %><%--
   Created by IntelliJ IDEA.
   User: korneliajagodzinska
   Date: 05/09/2020

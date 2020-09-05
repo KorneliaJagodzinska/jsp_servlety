@@ -12,7 +12,7 @@
 </head>
 <body>
 <jsp:include page="navigator.jsp"/>
-<form action="${pageContext.request.contextPath}/" method="get">
+<form action="${pageContext.request.contextPath}/student/form" method="post">
     <%--first name input type text--%>
     <label for="inputName">First name:</label> <input id="inputName" type="text" name="firstNameValue"><br/>
     <%--last name input type text--%>

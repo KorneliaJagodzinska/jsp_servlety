@@ -1,6 +1,7 @@
 package webappdemo.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Formula;
@@ -15,13 +16,14 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String firstName;
-    private String LastName;
+    private String lastName;
     private LocalDate birthDate;
     @Formula("(year(now())-year(birthDate))")
     private int age;
