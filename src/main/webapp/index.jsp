@@ -18,6 +18,36 @@
 </head>
 <body>
 
+<form action="" method="get">
+    <label for="colInput">Ilość kolumn:</label> <input id="colInput" type="number" min="1" step="1" name="colNumber">
+    <input type="submit">
+</form>
+<hr> <%--linia horyzontalna--%>
+<%
+    String colNumberString = request.getParameter("colNumber");
+    int colNumber;
+    if(colNumberString == null){
+        colNumber = 10; // domyślna wartość
+    }else{
+        colNumber = Integer.parseInt(colNumberString);
+    }
+    out.print("<table>");
+    // stwórz tabliczkę mnożenia (tabela)
+    // rozmiar tabliczki mnożenia to 10 x 10
+    // każda komórka w tabeli powinna zawierać jeden wynik mnożenia
+    // tabela powinna być stylizowana i mieć obramowanie
+    for (int i = 1; i <= 10; i++) {
+        out.print("<tr>"); // table row
+        for (int col = 1; col <= colNumber; col++) {
+            out.print("<td>");
+            out.print(i*col);
+            out.print("</td>");
+        }
+        out.print("</tr>");
+    }
+    out.print("</table>");
+%>
+
 <%
     out.print("<table>");
     // stwórz tabliczkę mnożenia (tabela)
@@ -26,9 +56,9 @@
     // tabela powinna być stylizowana i mieć obramowanie
     for (int i = 1; i <= 10; i++) {
         out.print("<tr>"); // table row
-        for (int j = 1; j <= 10; j++) {
+        for (int col = 1; col <= 10; col++) {
             out.print("<td>");
-            out.print(i*j);
+            out.print(i*col);
             out.print("</td>");
         }
         out.print("</tr>");
