@@ -39,7 +39,7 @@
     if(rowNumberString == null){
         rowNumber = 10; // domyślna wartość
     }else{
-        rowNumber = Integer.parseInt(colNumberString);
+        rowNumber = Integer.parseInt(rowNumberString);
     }
     out.print("<table>");
     // stwórz tabliczkę mnożenia (tabela)
