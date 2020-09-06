@@ -24,7 +24,7 @@ public class Student {
     private int age;
     private boolean special;
     private double ects;
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
     @EqualsAndHashCode.Exclude
     private Set<Grade> grades;
 
