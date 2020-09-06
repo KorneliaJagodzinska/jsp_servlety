@@ -84,7 +84,7 @@
                             ${ocena.subject}
                     </div>
                     <div class="grade-table-cell">
-                            ${ocena.datetimeCreated}
+                            ${ocena.dateTimeCreated}
                     </div>
                     <div class="grade-table-cell">
                         <a href="${pageContext.request.contextPath}/grade/delete?id=${ocena.id}">Delete</a>
