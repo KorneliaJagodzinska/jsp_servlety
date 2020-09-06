@@ -37,13 +37,16 @@
             Is special
         </div>
         <div class="header-cell">
+            Average
+        </div>
+        <div class="header-cell">
             ECTS
         </div>
         <div class="header-cell actions-cell">
             Actions
         </div>
     </div>
-    <c:forEach items="${requestScope.jakastamsobie_lista}" var="studencik">
+    <c:forEach items="${requestScope.lista_studentów}" var="studencik">
         <div class="student-row">
             <div class="student-cell">
                 <c:out value="${studencik.id}"/>
@@ -62,6 +65,9 @@
             </div>
             <div class="student-cell">
                 <c:out value="${studencik.special}"/>
+            </div>
+            <div class="student-cell">
+                <c:out value="${studencik.average}"/>
             </div>
             <div class="student-cell">
                 <c:out value="${studencik.ects}"/>

@@ -6,13 +6,14 @@ import webappdemo.model.GradeSubject;
 import webappdemo.model.Student;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-
+@WebServlet("/grade/form")
 public class GradeAddServlet extends HttpServlet {
     private final EntityDao<Student> studentEntityDao = new EntityDao<>();
     private final EntityDao<Grade> gradeEntityDao = new EntityDao<>();
@@ -37,6 +38,6 @@ public class GradeAddServlet extends HttpServlet {
                     .build();
             gradeEntityDao.saveOrUpdate(grade);
         }
-        resp.sendRedirect(req.getContextPath() + "/student");
+        resp.sendRedirect(req.getContextPath() + "/student/list");
     }
 }

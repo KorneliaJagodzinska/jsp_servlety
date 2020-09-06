@@ -16,6 +16,9 @@
         <a href="${pageContext.request.contextPath}/student/form">Student form</a>
     </li>
     <li>
-        <a href="${pageContext.request.contextPath}/student">Student list</a>
+        <a href="${pageContext.request.contextPath}/student/list">Student list</a>
+    </li>
+    <li>
+        <a href="${pageContext.request.contextPath}/grade/form">Grade form</a>
     </li>
 </ul>
