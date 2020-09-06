@@ -17,10 +17,55 @@
 <jsp:include page="navigator.jsp"/>
 <div class ="details-container">
     <div class="details-section">
-        Lewa
+        <h1>LEWA</h1>
+        <ul>
+            <li>Id: ${requestScope.student.id}</li>
+            <li>Imię: ${requestScope.student.firstName}</li>
+            <li>Nazwisko:${requestScope.student.lastName}</li>
+            <li>Wiek:${requestScope.student.age}</li>
+            <li>Special:${requestScope.student.special}</li>
+            <li>ESCT:${requestScope.student.ects}</li>
+        </ul>
     </div>
     <div class="details-section">
-        Prawa
+        <h2>Oceny studenta:</h2>
+        <div class="grade-container">
+            <div class="grade-table-header">
+                <div class="grade-table-header-cell">
+                    Id
+                </div>
+                <div class="grade-table-header-cell">
+                    Value
+                </div>
+                <div class="grade-table-header-cell">
+                    Subject
+                </div>
+                <div class="grade-table-header-cell">
+                    Datetime
+                </div>
+                <div class="grade-table-header-cell">
+                    Actions
+                </div>
+            </div>
+            <c:forEach items="${requestScope.student.grades}" var="ocena">
+                <div class="grade-table-row">
+                    <div class="grade-table-cell">
+                            ${ocena.id}
+                    </div>
+                    <div class="grade-table-cell">
+                            ${ocena.value}
+                    </div>
+                    <div class="grade-table-cell">
+                            ${ocena.subject}
+                    </div>
+                    <div class="grade-table-cell">
+                            ${ocena.dateTimeCreated}
+                    </div>
+                    <div class="grade-table-cell">
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
     </div>
 </div>
 

@@ -26,7 +26,8 @@ public class Student {
     private double ects;
     @Formula("(SELECT AVG(g.value) from Grade g where g.student_id=id)")
     private Double average;
-    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
+
+    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
     @EqualsAndHashCode.Exclude
     private Set<Grade> grades;
 
