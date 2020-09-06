@@ -10,22 +10,47 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
-    <title>Student Details</title>
+    <title>Student details</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css">
 </head>
 <body>
 <jsp:include page="navigator.jsp"/>
-<div class ="details-container">
+<h1>Details of student with id: ${requestScope.student.id}</h1>
+<div class="details-container">
     <div class="details-section">
-        <h1>LEWA</h1>
-        <ul>
-            <li>Id: ${requestScope.student.id}</li>
-            <li>Imię: ${requestScope.student.firstName}</li>
-            <li>Nazwisko:${requestScope.student.lastName}</li>
-            <li>Wiek:${requestScope.student.age}</li>
-            <li>Special:${requestScope.student.special}</li>
-            <li>ESCT:${requestScope.student.ects}</li>
-        </ul>
+        <h2>Dane studenta:</h2>
+        <div class="details-param">
+            <div class="details-label">Id:</div>
+            <div class="detail">${requestScope.student.id}</div>
+        </div>
+        <div class="details-param">
+            <div class="details-label">Name:</div>
+            <div class="detail">${requestScope.student.firstName}</div>
+        </div>
+        <div class="details-param">
+            <div class="details-label">Surname:</div>
+            <div class="detail">${requestScope.student.lastName}</div>
+        </div>
+        <div class="details-param">
+            <div class="details-label">Birth date:</div>
+            <div class="detail">${requestScope.student.birthDate}</div>
+        </div>
+        <div class="details-param">
+            <div class="details-label">Age:</div>
+            <div class="detail">${requestScope.student.age}</div>
+        </div>
+        <div class="details-param">
+            <div class="details-label">Average:</div>
+            <div class="detail">${requestScope.student.average}</div>
+        </div>
+        <div class="details-param">
+            <div class="details-label">ECTS:</div>
+            <div class="detail">${requestScope.student.ects}</div>
+        </div>
+        <div class="details-param">
+            <div class="details-label">Is special:</div>
+            <div class="detail">${requestScope.student.special}</div>
+        </div>
     </div>
     <div class="details-section">
         <h2>Oceny studenta:</h2>
@@ -59,15 +84,15 @@
                             ${ocena.subject}
                     </div>
                     <div class="grade-table-cell">
-                            ${ocena.dateTimeCreated}
+                            ${ocena.datetimeCreated}
                     </div>
                     <div class="grade-table-cell">
+                        <a href="${pageContext.request.contextPath}/grade/delete?id=${ocena.id}">Delete</a>
                     </div>
                 </div>
             </c:forEach>
         </div>
     </div>
 </div>
-
 </body>
 </html>
