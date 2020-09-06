@@ -15,6 +15,14 @@
 </head>
 <body>
 <jsp:include page="navigator.jsp"/>
+<div class ="details-container">
+    <div class="details-section">
+        Lewa
+    </div>
+    <div class="details-section">
+        Prawa
+    </div>
+</div>
 
 </body>
 </html>

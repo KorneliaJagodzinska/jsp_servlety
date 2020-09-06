@@ -30,3 +30,16 @@
     background-color: darkgrey;
     width: 23%;
 }
+.details-container{
+    width: 90%;
+    margin: auto;
+    border: 1px solid #000000;
+    flex-direction: row;
+    display: flex;
+}
+.details-section{
+    width: 50%;
+    margin: auto;
+    border: 1px solid #ff0000;
+    display: flex;
+}
