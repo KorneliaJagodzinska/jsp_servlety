@@ -16,6 +16,7 @@ public class StudentListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Student> studentList= studentEntityDao.findAll(Student.class);
+        req.setAttribute("lista_studentów", studentList);
         req.getRequestDispatcher("/student_list.jsp").forward(req,resp);
     }
 }

@@ -1,16 +1,11 @@
 package webappdemo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.Formula;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Data
@@ -29,6 +24,9 @@ public class Student {
     private int age;
     private boolean special;
     private double ects;
+    @OneToMany(mappedBy = "student")
+    @EqualsAndHashCode.Exclude
+    private Set<Grade> grades;
 
 
 
