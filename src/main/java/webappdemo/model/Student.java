@@ -21,9 +21,11 @@ public class Student {
     private String lastName;
     private LocalDate birthDate;
     @Formula("(year(now())-year(birthDate))")
-    private int age;
+    private Integer age;
     private boolean special;
     private double ects;
+    @Formula("(SELECT AVG(g.value) from Grade g where g.student_id=id)")
+    private Double average;
     @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
     @EqualsAndHashCode.Exclude
     private Set<Grade> grades;

@@ -19,6 +19,7 @@
         <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
         <mapping class="webappdemo.model.Student"/>
+        <mapping class="webappdemo.model.Grade"/>
 
     </session-factory>
 </hibernate-configuration>
